@@ -1,0 +1,4 @@
+export THYELLA_PROJECT_ID=myprojectok
+export THYELLA_CLUSTER=mycluster
+export THYELLA_NODE_POOLS=default-pool,preemptible-pool
+export THYELLA_LOCAL=false
