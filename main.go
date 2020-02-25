@@ -9,7 +9,7 @@ import (
 
 type Env struct {
 	ProjectID string   `envconfig:"project_id"`
-	Cluter    string   `envconfig:"cluster"`
+	Cluster   string   `envconfig:"cluster"`
 	NodePools []string `envconfig:"node_pools"`
 }
 
@@ -32,7 +32,7 @@ func main() {
 		KaasClient: kaasClient,
 		K8sClient:  k8sClient,
 	}
-	if err := p.Run(e.Cluter, e.NodePools); err != nil {
+	if err := p.Purge(e.Cluster, e.NodePools); err != nil {
 		log.Fatal(err)
 	}
 }

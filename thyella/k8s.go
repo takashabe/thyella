@@ -114,7 +114,7 @@ func (k8s K8sClient) Purge(ctx context.Context, node *Node) error {
 	}
 
 	if err := k8s.delete(ctx, node); err != nil {
-		e := fmt.Errorf("failed to delete: %w")
+		e := fmt.Errorf("failed to delete: %w", err)
 		if err := k8s.applyCordonOrUncordon(node, false); err != nil {
 			e = fmt.Errorf("%+v: %w", e, err)
 		}
